@@ -1,0 +1,50 @@
+﻿@model List<Telomando.Models.Paise>
+@{
+    ViewData["Title"] = "ListaPaises";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Paises</h1>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Paises</h5>
+    </div>
+    <div class="card-body">
+        <a class="btn-success btn-sm" asp-action="Paises_Detalle" asp-controller="Paises" asp-route-idpaises="0">Crear Nuevo</a>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Pais</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Activo</th>
+                    <th>Eliminado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.FechaRegistro</td>
+                        <td>@item.Activo</td>
+                        <td>@item.Eliminado</td>
+
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Paises_Detalle" asp-controller="Paises" asp-route-idPais="@item.Idpaises">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Paises" asp-route-idPais="@item.Idpaises">Eliminar</a>
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
