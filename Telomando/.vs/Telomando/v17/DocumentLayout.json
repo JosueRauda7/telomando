@@ -1,20 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\pc\\Documents\\UFG\\PROGRA 3\\Unidad 4\\Proyecto\\Telomando\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|c:\\users\\pc\\documents\\ufg\\progra 3\\unidad 4\\proyecto\\telomando\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|c:\\users\\pc\\documents\\ufg\\progra 3\\unidad 4\\proyecto\\telomando\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|c:\\users\\pc\\documents\\ufg\\progra 3\\unidad 4\\proyecto\\telomando\\models\\telomandofinalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|solutionrelative:models\\telomandofinalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,46 +9,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pc\\Documents\\UFG\\PROGRA 3\\Unidad 4\\Proyecto\\Telomando\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\pc\\Documents\\UFG\\PROGRA 3\\Unidad 4\\Proyecto\\Telomando\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAB3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T03:21:02.759Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{ca8cc5c7-0231-406a-95cd-aa5ed6ac0190}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\pc\\Documents\\UFG\\PROGRA 3\\Unidad 4\\Proyecto\\Telomando\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\pc\\Documents\\UFG\\PROGRA 3\\Unidad 4\\Proyecto\\Telomando\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-18T03:17:16.011Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TelomandofinalContext.cs",
-              "DocumentMoniker": "C:\\Users\\pc\\Documents\\UFG\\PROGRA 3\\Unidad 4\\Proyecto\\Telomando\\Models\\TelomandofinalContext.cs",
-              "RelativeDocumentMoniker": "Models\\TelomandofinalContext.cs",
-              "ToolTip": "C:\\Users\\pc\\Documents\\UFG\\PROGRA 3\\Unidad 4\\Proyecto\\Telomando\\Models\\TelomandofinalContext.cs",
-              "RelativeToolTip": "Models\\TelomandofinalContext.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAowFoAAACmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T03:16:39.997Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             }
           ]
         }

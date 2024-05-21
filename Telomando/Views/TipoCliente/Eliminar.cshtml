@@ -1,0 +1,42 @@
+﻿@model Telomando.Models.TipoCliente
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">Realmente Desea Eliminar el Registro?</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Eliminar" asp-controller="TipoCliente" method="post">
+            <input type="hidden" asp-for="Idtipocliente" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Nombre">Tipo Cliente</label>
+                <input class="form-control form-control-sm" asp-for="Nombre" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="FechaRegistro">Fecha Creacion</label>
+                <input class="form-control form-control-sm" asp-for="FechaRegistro" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Activo">Activo</label>
+                <input class="form-control form-control-sm" asp-for="Activo" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Eliminado">Eliminado</label>
+                <input class="form-control form-control-sm" asp-for="Eliminado" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="ListaTiposClientes" asp-controller="TipoCliente">Volver</a>
+
+            </div>
+
+        </form>
+    </div>
+</div>

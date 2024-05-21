@@ -1,0 +1,59 @@
+﻿@model Telomando.Models.TipoCliente
+@{
+    ViewData["Title"] = "Tipos de Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model.Idtipocliente == 0)
+{
+    <h1>Crear Tipo Cliente</h1>
+}
+else
+{
+    <h1>Editar Tipo Cliente</h1>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="TiposClientes_Detalle" asp-controller="TipoCliente" method="post">
+            <input type="hidden" asp-for="Idtipocliente" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Nombre">Tipo Cliente</label>
+                <input class="form-control form-control-sm" asp-for="Nombre" type="text" />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="FechaRegistro">Fecha Creacion</label>
+                <input class="form-control form-control-sm" asp-for="FechaRegistro" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Activo">Activo</label>
+                <input class="form-control form-control-sm" asp-for="Activo" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Eliminado">Eliminado</label>
+                <input class="form-control form-control-sm" asp-for="Eliminado" type="text" />
+            </div>
+
+
+            <div class="mb-2">
+
+                @if (Model.Idtipocliente == 0)
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Crear</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Actualizar</button>
+                }
+
+                <a class="btn btn-dark btn-sm" asp-action="ListaTiposClientes" asp-controller="TipoCliente">Volver</a>
+
+            </div>
+
+        </form>
+    </div>
+</div>
