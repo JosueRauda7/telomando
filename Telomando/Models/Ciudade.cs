@@ -19,5 +19,5 @@ public partial class Ciudade
 
     public virtual ICollection<Direccione> Direcciones { get; set; } = new List<Direccione>();
 
-    public virtual Municipio IdmunicipioNavigation { get; set; } = null!;
+    public virtual Municipio oMunicipios { get; set; } = null!;
 }
