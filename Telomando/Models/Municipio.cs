@@ -19,5 +19,5 @@ public partial class Municipio
 
     public virtual ICollection<Ciudade> Ciudades { get; set; } = new List<Ciudade>();
 
-    public virtual Departamento? IddepartamentoNavigation { get; set; }
+    public virtual Departamento? oDepartamentos { get; set; }
 }

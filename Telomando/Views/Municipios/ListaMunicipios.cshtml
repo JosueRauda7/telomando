@@ -1,0 +1,51 @@
+﻿@model List<Telomando.Models.Municipio>
+@{
+    ViewData["Title"] = "Municipios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Municipios</h1>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Municipios</h5>
+    </div>
+    <div class="card-body">
+        <a class="btn-success btn-sm" asp-action="Municipio_Detalle" asp-controller="Municipios" asp-route-idMunicipio="0">Crear Nuevo</a>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Departamento</th>
+                    <th>Municipio</th>
+                    <th>Fecha Creacion</th>
+                    <th>Activo</th>
+                    <th>Eliminado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.oDepartamentos.Nombre</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.FechaRegistro</td>
+                        <td>@item.Activo</td>
+                        <td>@item.Eliminado</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Municipio_Detalle" asp-controller="Municipios" asp-route-idMunicipio="@item.Idmunicipio">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Municipios" asp-route-idMunicipio="@item.Idmunicipio">Eliminar</a>
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

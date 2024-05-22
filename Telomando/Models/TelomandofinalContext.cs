@@ -481,7 +481,7 @@ public partial class TelomandofinalContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("nombre");
 
-            entity.HasOne(d => d.IddepartamentoNavigation).WithMany(p => p.Municipios)
+            entity.HasOne(d => d.oDepartamentos).WithMany(p => p.Municipios)
                 .HasForeignKey(d => d.Iddepartamento)
                 .HasConstraintName("municipios$municipios_ibfk_1");
         });
