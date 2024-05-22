@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|c:\\users\\admin\\source\\repos\\josuerauda7\\telomando\\telomando\\controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|solutionrelative:controllers\\clientescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|c:\\users\\admin\\source\\repos\\josuerauda7\\telomando\\telomando\\models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|solutionrelative:models\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|c:\\users\\admin\\source\\repos\\josuerauda7\\telomando\\telomando\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C9D32F3-8DB9-47FD-9A32-44FCD7A29106}|Telomando.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,27 +71,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ClientesController.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\Controllers\\ClientesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ClientesController.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\Controllers\\ClientesController.cs",
-              "RelativeToolTip": "Controllers\\ClientesController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T21:55:37.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\Models\\Cliente.cs",
-              "RelativeDocumentMoniker": "Models\\Cliente.cs",
-              "ToolTip": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\Models\\Cliente.cs",
-              "RelativeToolTip": "Models\\Cliente.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T21:53:39.288Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAD8AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T23:07:52.917Z",
               "EditorCaption": ""
             }
           ]

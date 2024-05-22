@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "f9PzIkub+tqiMYEEA8go/xseU8TlKUWmc+JjfI67Igw=",
+  "Hash": "zvv9deiXjKvTk8m9vRFtcOcmV7Anro8usHc7kTTRd5I=",
   "Source": "Telomando",
   "BasePath": "_content/Telomando",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\wwwroot\\imgs\\logoUfg.png",
+      "SourceId": "Telomando",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\wwwroot\\",
+      "BasePath": "_content/Telomando",
+      "RelativePath": "imgs/logoUfg.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\logoUfg.png"
     },
     {
       "Identity": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\wwwroot\\js\\site.js",

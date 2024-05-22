@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\wwwroot\\imgs\\logoUfg.png",
+      "PackagePath": "staticwebassets\\imgs\\logoUfg.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\source\\repos\\JosueRauda7\\telomando\\Telomando\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
