@@ -17,7 +17,7 @@ public partial class Departamento
 
     public bool Eliminado { get; set; }
 
-    public virtual Paise IdpaisesNavigation { get; set; } = null!;
+    public virtual Paise oPaises { get; set; } = null!;
 
     public virtual ICollection<Municipio> Municipios { get; set; } = new List<Municipio>();
 }

@@ -246,7 +246,7 @@ public partial class TelomandofinalContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("nombre");
 
-            entity.HasOne(d => d.IdpaisesNavigation).WithMany(p => p.Departamentos)
+            entity.HasOne(d => d.oPaises).WithMany(p => p.Departamentos)
                 .HasForeignKey(d => d.Idpaises)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("departamentos$departamentos_ibfk_1");
