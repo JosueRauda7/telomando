@@ -1,0 +1,52 @@
+﻿@model List<Telomando.Models.Cliente>
+@{
+    ViewData["Title"] = "Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Clientes</h1>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Clientes</h5>
+    </div>
+    <div class="card-body">
+        <a class="btn-success btn-sm" asp-action="Cliente_Detalle" asp-controller="Clientes" asp-route-idcliente="0">Crear Nuevo</a>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Tipo de Cliente</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Activo</th>
+                    <th>Eliminado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.oUsuario.Nombres</td>
+                        <td>@item.oTipoCliente.Nombre</td>
+                        <td>@item.FechaRegistro</td>
+                        <td>@item.Activo</td>
+                        <td>@item.Eliminado</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Cliente_Detalle" asp-controller="Clientes" asp-route-idCliente="@item.Idcliente">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Clientes" asp-route-idCliente="@item.Idcliente">Eliminar</a>
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

@@ -24,9 +24,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Pagina Principal</a>
                         </li>
                        
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="TipoCliente" asp-action="ListaTiposClientes">Tipos de Clientes</a>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Paises" asp-action="ListaPaises">Paises</a>
                         </li>
@@ -42,6 +40,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="TipoUsuario" asp-action="ListaTiposUsuarios">Tipos de Usuarios</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="TipoCliente" asp-action="ListaTiposClientes">Tipos de Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="ListaClientes">Clientes</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -55,6 +59,8 @@
 
 
     </header>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

@@ -193,12 +193,12 @@ public partial class TelomandofinalContext : DbContext
             entity.Property(e => e.Idtipocliente).HasColumnName("idtipocliente");
             entity.Property(e => e.Idusuario).HasColumnName("idusuario");
 
-            entity.HasOne(d => d.IdtipoclienteNavigation).WithMany(p => p.Clientes)
+            entity.HasOne(d => d.oTipoCliente).WithMany(p => p.Clientes)
                 .HasForeignKey(d => d.Idtipocliente)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("clientes$clientes_ibfk_2");
 
-            entity.HasOne(d => d.IdusuarioNavigation).WithMany(p => p.Clientes)
+            entity.HasOne(d => d.oUsuario).WithMany(p => p.Clientes)
                 .HasForeignKey(d => d.Idusuario)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("clientes$clientes_ibfk_1");

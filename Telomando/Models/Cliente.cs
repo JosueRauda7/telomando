@@ -19,7 +19,7 @@ public partial class Cliente
 
     public virtual ICollection<Entrega> Entregas { get; set; } = new List<Entrega>();
 
-    public virtual TipoCliente IdtipoclienteNavigation { get; set; } = null!;
+    public virtual TipoCliente oTipoCliente { get; set; } = null!;
 
-    public virtual Usuario IdusuarioNavigation { get; set; } = null!;
+    public virtual Usuario oUsuario { get; set; } = null!;
 }
