@@ -20,3 +20,64 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+
+
+
+/*PARA MENU CON TARJETAS*/
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    position: absolute;
+    top: -30px; /* Half of the circle's height */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid white; /* Border around the circle */
+    color: white;
+}
+
+.card {
+    padding-top: 25px; /* Add space for the circle */
+    overflow: visible; /* Ensure the circle isn't clipped */
+}
+
+.card-body {
+    padding-top: 5px; /* Add space for the circle */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.card-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Make the entire card clickable */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+    .card-link .card {
+        cursor: pointer;
+        transition: transform 0.2s; /* Optional: Add a little animation on hover */
+    }
+
+        .card-link .card:hover {
+            transform: scale(1.05); /* Optional: Scale up the card a little on hover */
+        }

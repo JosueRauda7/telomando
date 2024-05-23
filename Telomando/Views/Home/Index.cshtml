@@ -2,11 +2,69 @@
     ViewData["Title"] = "Pagina Principal TELOMANDO";
 }
 
-<div class="text-center">
+@* <div class="text-center">
     <h1 class="display-4">Telomando - UFG</h1>
     <!--<p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>-->
     <div align="center">
-        <img src="imgs/logoUfg.png" width="215" height="210" />
+        <img src="imgs/logoUfg.png" width="215" height="260" />
     </div>
 
+</div>
+ *@
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            <a asp-controller="Clientes" asp-action="ListaClientes" class="card-link">
+                <div class="card text-white bg-primary mb-3 position-relative">
+                    <div class="icon-circle bg-primary text-white">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Clientes</h5>
+                        @* <p class="card-text">1,200</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#" class="card-link">
+                <div class="card text-white bg-success mb-3 position-relative">
+                    <div class="icon-circle bg-success text-white">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Paises</h5>
+                        @* <p class="card-text">$34,000</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#" class="card-link">
+                <div class="card text-white bg-warning mb-3 position-relative">
+                    <div class="icon-circle bg-warning text-white">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Departamentos</h5>
+                        @* <p class="card-text">150</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a href="#" class="card-link">
+                <div class="card text-white bg-danger mb-3 position-relative">
+                    <div class="icon-circle bg-danger text-white">
+                        <i class="fas fa-map-pin"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Municipios</h5>
+                        @* <p class="card-text">23</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
 </div>
