@@ -1,0 +1,51 @@
+﻿@model List<Telomando.Models.TipoTransporte>
+@{
+    ViewData["Title"] = "Tipos de Transporte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tipos de Transporte</h1>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Tipos de Transporte</h5>
+    </div>
+    <div class="card-body">
+        <a class="btn-success btn-sm" asp-action="TipoTransporte_Detalle" asp-controller="TiposTransportes" asp-route-idtipotransporte="0">Crear Nuevo</a>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tipo de Transporte</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Activo</th>
+                    <th>Eliminado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Nombre</td>
+                        <td>@item.FechaRegistro</td>
+                        <td>@item.Activo</td>
+                        <td>@item.Eliminado</td>
+
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="TipoTransporte_Detalle" asp-controller="TiposTransportes" asp-route-idTipoTransporte="@item.Idtipotransporte">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="TiposTransportes" asp-route-idTipoTransporte="@item.Idtipotransporte">Eliminar</a>
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

@@ -1,24 +1,25 @@
-﻿@model Telomando.Models.Paise
+﻿@model Telomando.Models.TipoTransporte
 @{
-    ViewData["Title"] = "Pais";
+    ViewData["Title"] = "Tipo de Transporte";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@if (Model.Idpaises == 0)
+
+@if (Model.Idtipotransporte == 0)
 {
-    <h1>Crear Pais</h1>
+    <h1>Crear Tipo de Transporte</h1>
 }
 else
 {
-    <h1>Editar Pais</h1>
+    <h1>Editar Tipo de Transporte</h1>
 }
 
 <div class="row">
     <div class="col-sm-4">
-        <form asp-action="Paises_Detalle" asp-controller="Paises" method="post">
-            <input type="hidden" asp-for="Idpaises" />
+        <form asp-action="TipoTransporte_Detalle" asp-controller="TiposTransportes" method="post">
+            <input type="hidden" asp-for="Idtipotransporte" />
 
             <div class="mb-2">
-                <label class="form-label" asp-for="Nombre">Pais</label>
+                <label class="form-label" asp-for="Nombre">Tipo de transporte</label>
                 <input class="form-control form-control-sm" asp-for="Nombre" type="text" />
             </div>
 
@@ -41,7 +42,7 @@ else
 
             <div class="mb-2">
 
-                @if (Model.Idpaises == 0)
+                @if (Model.Idtipotransporte == 0)
                 {
                     <button class="btn btn-primary btn-sm w-25" type="submit">Crear</button>
                 }
@@ -50,7 +51,7 @@ else
                     <button class="btn btn-primary btn-sm w-25" type="submit">Actualizar</button>
                 }
 
-                <a class="btn btn-dark btn-sm" asp-action="ListaPaises" asp-controller="Paises">Volver</a>
+                <a class="btn btn-dark btn-sm" asp-action="ListaTiposTransportes" asp-controller="TiposTransportes">Volver</a>
 
             </div>
 

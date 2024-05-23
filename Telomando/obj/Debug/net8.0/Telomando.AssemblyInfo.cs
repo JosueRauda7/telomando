@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Telomando")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e794ff9c741e6083efde83ad0525246f48693eb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d783830505d45f26e5efca550b6273ca9f56341d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Telomando")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Telomando")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
