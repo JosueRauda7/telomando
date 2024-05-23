@@ -41,15 +41,15 @@ else
             </div>
 
             <div class="mb-2">
-                <label class="form-label" asp-for="oCliente.Activo">Activo</label>
-                <input class="form-control form-control-sm" asp-for="oCliente.Activo" type="text" />
+                <label class="form-check-label" asp-for="oCliente.Activo">Activo</label>
+                <input class="form-check-input" asp-for="oCliente.Activo" type="checkbox" />
             </div>
 
             <div class="mb-2">
-                <label class="form-label" asp-for="oCliente.Eliminado">Eliminado</label>
-                <input class="form-control form-control-sm" asp-for="oCliente.Eliminado" type="text" />
+                <label class="form-check-label" asp-for="oCliente.Eliminado">Eliminado</label>
+                <input class="form-check-input" asp-for="oCliente.Eliminado" type="checkbox" />
             </div>
-
+              
             <div class="mb-2">
 
                 @if (Model.oCliente.Idcliente == 0)
