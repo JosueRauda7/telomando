@@ -27,9 +27,9 @@ public partial class Direccione
 
     public virtual ICollection<Entrega> Entregas { get; set; } = new List<Entrega>();
 
-    public virtual Ciudade IdciudadNavigation { get; set; } = null!;
+    public virtual Ciudade oCiudad { get; set; } = null!;
 
-    public virtual Sucursale? IdsucursalNavigation { get; set; }
+    public virtual Sucursale? oSucursal { get; set; }
 
-    public virtual Usuario? IdusuarioNavigation { get; set; }
+    public virtual Usuario? oUsuario { get; set; }
 }
