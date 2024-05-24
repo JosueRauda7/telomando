@@ -1,0 +1,70 @@
+﻿@model Telomando.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"></label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellidos" class="control-label"></label>
+                <input asp-for="Apellidos" class="form-control" />
+                <span asp-validation-for="Apellidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Idtipousuario" class="control-label"></label>
+                <select asp-for="Idtipousuario" class ="form-control" asp-items="ViewBag.Idtipousuario"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Logueado" class="control-label"></label>
+                <input asp-for="Logueado" class="form-control" />
+                <span asp-validation-for="Logueado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bloqueado" class="control-label"></label>
+                <input asp-for="Bloqueado" class="form-control" />
+                <span asp-validation-for="Bloqueado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IntentosLogin" class="control-label"></label>
+                <input asp-for="IntentosLogin" class="form-control" />
+                <span asp-validation-for="IntentosLogin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaRegistro" class="control-label"></label>
+                <input asp-for="FechaRegistro" class="form-control" />
+                <span asp-validation-for="FechaRegistro" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Activo" /> @Html.DisplayNameFor(model => model.Activo)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Eliminado" /> @Html.DisplayNameFor(model => model.Eliminado)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

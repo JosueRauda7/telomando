@@ -1,4 +1,4 @@
-﻿@model Telomando.Models.TipoTransporte
+﻿@model Telomando.Models.Categoria
 @{
     ViewData["Title"] = "Eliminar";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,11 +8,11 @@
 
 <div class="row">
     <div class="col-sm-4">
-        <form asp-action="Eliminar" asp-controller="TiposTransportes" method="post">
-            <input type="hidden" asp-for="Idtipotransporte" />
+        <form asp-action="Eliminar" asp-controller="Categorias" method="post">
+            <input type="hidden" asp-for="Idcategoria" />
 
             <div class="mb-2">
-                <label class="form-label" asp-for="Nombre">Tipo de Transporte</label>
+                <label class="form-label" asp-for="Nombre">Categoria</label>
                 <input class="form-control form-control-sm" asp-for="Nombre" type="text" disabled />
             </div>
 
@@ -33,7 +33,7 @@
 
             <div class="mb-2">
                 <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
-                <a class="btn btn-dark btn-sm" asp-action="ListaTiposTransportes" asp-controller="TiposTransportes">Volver</a>
+                <a class="btn btn-dark btn-sm" asp-action="ListaCategorias" asp-controller="Categorias">Volver</a>
 
             </div>
 

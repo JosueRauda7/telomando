@@ -106,12 +106,12 @@ public partial class TelomandofinalContext : DbContext
             entity.Property(e => e.Idsucursal).HasColumnName("idsucursal");
             entity.Property(e => e.Idtipobodega).HasColumnName("idtipobodega");
 
-            entity.HasOne(d => d.IdsucursalNavigation).WithMany(p => p.Bodegas)
+            entity.HasOne(d => d.oSucursal).WithMany(p => p.Bodegas)
                 .HasForeignKey(d => d.Idsucursal)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("bodegas$bodegas_ibfk_2");
 
-            entity.HasOne(d => d.IdtipobodegaNavigation).WithMany(p => p.Bodegas)
+            entity.HasOne(d => d.oTipoBodega).WithMany(p => p.Bodegas)
                 .HasForeignKey(d => d.Idtipobodega)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("bodegas$bodegas_ibfk_1");
@@ -131,12 +131,12 @@ public partial class TelomandofinalContext : DbContext
             entity.Property(e => e.Idproducto).HasColumnName("idproducto");
             entity.Property(e => e.Stock).HasColumnName("stock");
 
-            entity.HasOne(d => d.IdbodegaNavigation).WithMany(p => p.BodegaProductos)
+            entity.HasOne(d => d.oBodega).WithMany(p => p.BodegaProductos)
                 .HasForeignKey(d => d.Idbodega)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("bodega_producto$bodega_producto_ibfk_1");
 
-            entity.HasOne(d => d.IdproductoNavigation).WithMany(p => p.BodegaProductos)
+            entity.HasOne(d => d.oProducto).WithMany(p => p.BodegaProductos)
                 .HasForeignKey(d => d.Idproducto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("bodega_producto$bodega_producto_ibfk_2");
@@ -524,7 +524,7 @@ public partial class TelomandofinalContext : DbContext
                 .HasColumnType("decimal(16, 2)")
                 .HasColumnName("precio");
 
-            entity.HasOne(d => d.IdmarcaNavigation).WithMany(p => p.Productos)
+            entity.HasOne(d => d.oMarca).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.Idmarca)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("productos$productos_ibfk_1");
@@ -572,7 +572,7 @@ public partial class TelomandofinalContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("nombre");
 
-            entity.HasOne(d => d.IdcategoriaNavigation).WithMany(p => p.SubCategoria)
+            entity.HasOne(d => d.oCategoria).WithMany(p => p.SubCategoria)
                 .HasForeignKey(d => d.Idcategoria)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("sub_categorias$sub_categorias_ibfk_1");

@@ -28,7 +28,7 @@ public partial class Producto
 
     public virtual ICollection<BodegaProducto> BodegaProductos { get; set; } = new List<BodegaProducto>();
 
-    public virtual Marca IdmarcaNavigation { get; set; } = null!;
+    public virtual Marca oMarca { get; set; } = null!;
 
     public virtual ICollection<ProductosDetalle> ProductosDetalles { get; set; } = new List<ProductosDetalle>();
 }
