@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class TipoEstadoEntrega
 {
+    public TipoEstadoEntrega()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idtipoestadoentrega { get; set; }
 
     public string Nombre { get; set; } = null!;

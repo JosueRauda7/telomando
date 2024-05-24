@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class Municipio
 {
+    public Municipio()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idmunicipio { get; set; }
 
     public int? Iddepartamento { get; set; }

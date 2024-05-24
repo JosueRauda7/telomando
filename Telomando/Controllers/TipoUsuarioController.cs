@@ -48,15 +48,32 @@ namespace Telomando.Controllers
 
 
             return View(oTipoUsuario);
+
+
         }
 
         [HttpPost]
         public IActionResult Eliminar(TipoUsuario oTipoUsuario)
         {
-            _DBContext.TipoUsuarios.Remove(oTipoUsuario);
-            _DBContext.SaveChanges();
 
-            return RedirectToAction("ListaTiposUsuarios", "TipoUsuario");
+
+
+            try
+            {
+                _DBContext.TipoUsuarios.Remove(oTipoUsuario);
+                _DBContext.SaveChanges();
+
+                return RedirectToAction("ListaTiposUsuarios", "TipoUsuario");
+            }
+            catch (Exception ex)
+            {
+                // Obtener el mensaje de la excepción interna si existe
+                string errorMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+
+                TempData["AlertMessage"] = errorMessage;
+                TempData["AlertType"] = "error";
+                return View(oTipoUsuario);
+            }
         }
 
         [HttpPost]

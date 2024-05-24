@@ -1,0 +1,48 @@
+﻿@model Telomando.Models.Departamento
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">Realmente Desea Eliminar el Registro?</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Eliminar" asp-controller="Departamentos" method="post">
+            <input type="hidden" asp-for="Iddepartamento" />
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oPaises.Idpaises">Pais</label>
+                <input class="form-control form-control-sm" asp-for="oPaises.Nombre" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="Nombre">Departamento</label>
+                <input class="form-control form-control-sm" asp-for="Nombre" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="FechaRegistro">Fecha de Creacion</label>
+                <input class="form-control form-control-sm" asp-for="FechaRegistro" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="Activo">Activo</label>
+                <input class="form-check-input" asp-for="Activo" type="checkbox" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="Eliminado">Eliminado</label>
+                <input class="form-check-input" asp-for="Eliminado" type="checkbox" />
+            </div>
+
+            
+            <div class="mb-2">
+                <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="ListaDepartamentos" asp-controller="Departamentos">Volver</a>
+
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -26,6 +26,7 @@ namespace Telomando.Controllers
         public IActionResult Paises_Detalle(int idPais)
         {
             Paise oPais = new Paise();
+            oPais.FechaRegistro = DateOnly.FromDateTime(DateTime.Now);
 
 
             if (idPais != 0)
@@ -49,10 +50,22 @@ namespace Telomando.Controllers
         [HttpPost]
         public IActionResult Eliminar(Paise oPais)
         {
-            _DBContext.Paises.Remove(oPais);
-            _DBContext.SaveChanges();
+            try {
+                _DBContext.Paises.Remove(oPais);
+                _DBContext.SaveChanges();
 
-            return RedirectToAction("ListaPaises", "Paises");
+                return RedirectToAction("ListaPaises", "Paises");
+            }
+            catch (Exception ex) {
+                // Obtener el mensaje de la excepción interna si existe
+                string errorMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+
+                ModelState.AddModelError("", "Ocurrió un error al crear el país. Por favor, inténtelo de nuevo.");
+                TempData["AlertMessage"] = errorMessage;
+                TempData["AlertType"] = "error";
+                return View(oPais);
+            }
+
         }
 
         [HttpPost]

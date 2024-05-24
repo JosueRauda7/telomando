@@ -5,6 +5,12 @@ namespace Telomando.Models;
 
 public partial class Direccione
 {
+    public Direccione()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
+
     public int Iddireccion { get; set; }
 
     public int? Idusuario { get; set; }

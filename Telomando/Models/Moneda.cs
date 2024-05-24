@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class Moneda
 {
+    public Moneda()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idmoneda { get; set; }
 
     public string Nombre { get; set; } = null!;
@@ -16,4 +21,5 @@ public partial class Moneda
     public bool Eliminado { get; set; }
 
     public virtual ICollection<Tarifa> Tarifas { get; set; } = new List<Tarifa>();
+
 }

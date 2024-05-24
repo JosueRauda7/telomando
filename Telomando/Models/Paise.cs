@@ -6,6 +6,11 @@ namespace Telomando.Models;
 
 public partial class Paise
 {
+    public Paise()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idpaises { get; set; }
 
     [Required(ErrorMessage = "El nombre es obligatorio.")]

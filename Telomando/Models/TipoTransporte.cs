@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class TipoTransporte
 {
+    public TipoTransporte()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idtipotransporte { get; set; }
 
     public string Nombre { get; set; } = null!;

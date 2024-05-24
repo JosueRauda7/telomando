@@ -5,6 +5,12 @@ namespace Telomando.Models;
 
 public partial class Contacto
 {
+
+    public Contacto()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idcontacto { get; set; }
 
     public int Idusuario { get; set; }

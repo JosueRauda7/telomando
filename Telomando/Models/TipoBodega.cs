@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class TipoBodega
 {
+    public TipoBodega()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idtipobodega { get; set; }
 
     public string Nombre { get; set; } = null!;

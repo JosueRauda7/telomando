@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class TransporteSucursal
 {
+    public TransporteSucursal()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idtransporteusuario { get; set; }
 
     public int Idtransporte { get; set; }

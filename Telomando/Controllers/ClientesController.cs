@@ -48,8 +48,9 @@ namespace Telomando.Controllers
             if (idCliente != 0)
             {
                 oClienteVM.oCliente = _DBContext.Clientes.Find(idCliente);
-            }
 
+
+            }
 
             return View(oClienteVM);
         }

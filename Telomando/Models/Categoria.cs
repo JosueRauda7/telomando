@@ -5,6 +5,12 @@ namespace Telomando.Models;
 
 public partial class Categoria
 {
+
+    public Categoria()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idcategoria { get; set; }
 
     public string Nombre { get; set; } = null!;

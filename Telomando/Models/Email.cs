@@ -5,6 +5,12 @@ namespace Telomando.Models;
 
 public partial class Email
 {
+
+    public Email()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idemail { get; set; }
 
     public int Idusuario { get; set; }

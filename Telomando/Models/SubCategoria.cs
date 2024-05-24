@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class SubCategoria
 {
+    public SubCategoria()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idsubcategoria { get; set; }
 
     public int Idcategoria { get; set; }

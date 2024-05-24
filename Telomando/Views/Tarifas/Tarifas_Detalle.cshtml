@@ -1,0 +1,78 @@
+﻿@model Telomando.Models.ViewModels.TarifaVM
+@{
+    ViewData["Title"] = "Tarifas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model.oTarifas.Idtarifa == 0)
+{
+    <h1>Crear Tarifa</h1>
+}
+else
+{
+    <h1>Editar Tarifa</h1>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Tarifas_Detalle" asp-controller="Tarifas" method="post">
+            <input type="hidden" asp-for="oTarifas.Idtarifa" />
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oTarifas.IdmonedaNavigation">Moneda</label>
+                <select class="form-select form-select-sm" asp-for="oTarifas.Idmoneda" asp-items="@Model.oListaMonedas">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oTarifas.Valor">Valor</label>
+                <input class="form-control form-control-sm" asp-for="oTarifas.Valor" type="text" />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oTarifas.PorcentajeExtra">Porcentaje extra</label>
+                <input class="form-control form-control-sm" asp-for="oTarifas.PorcentajeExtra" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oTarifas.FechaRegistro">Fecha de Creacion</label>
+                <input class="form-control form-control-sm" asp-for="oTarifas.FechaRegistro" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="oTarifas.Activo">Activo</label>
+                <input class="form-check-input" asp-for="oTarifas.Activo" type="checkbox" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="oTarifas.Eliminado">Eliminado</label>
+                <input class="form-check-input" asp-for="oTarifas.Eliminado" type="checkbox" />
+            </div>
+
+              
+            
+
+           
+            <div class="mb-2">
+
+                @if (Model.oTarifas.Idtarifa == 0)
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Crear</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Actualizar</button>
+                }
+
+                <a class="btn btn-dark btn-sm" asp-action="ListaDepartamentos" asp-controller="Departamentos">Volver</a>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+

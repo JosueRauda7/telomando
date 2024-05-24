@@ -66,5 +66,47 @@
                 </div>
             </a>
         </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="TipoUsuario" asp-action="ListaTiposUsuarios" class="card-link">
+                <div class="card text-white bg-info mb-3 position-relative">
+                    <div class="icon-circle bg-info text-white">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tipos de usuario</h5>
+                        @* <p class="card-text">Gestión de tipos de usuario</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Monedas" asp-action="Index" class="card-link">
+                <div class="card text-white bg-secondary mb-3 position-relative">
+                    <div class="icon-circle bg-secondary text-white">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Monedas</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Tarifas" asp-action="ListaTarifas" class="card-link">
+                <div class="card text-white bg-primary mb-3 position-relative">
+                    <div class="icon-circle bg-primary text-white">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tarifas</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>

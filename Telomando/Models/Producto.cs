@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class Producto
 {
+    public Producto()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idproducto { get; set; }
 
     public string Nombre { get; set; } = null!;

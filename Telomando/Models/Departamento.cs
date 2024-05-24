@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class Departamento
 {
+    public Departamento()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Iddepartamento { get; set; }
 
     public int Idpaises { get; set; }

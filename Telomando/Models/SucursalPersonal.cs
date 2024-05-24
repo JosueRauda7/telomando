@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class SucursalPersonal
 {
+    public SucursalPersonal()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idsucursalpersonal { get; set; }
 
     public int Idsucursal { get; set; }

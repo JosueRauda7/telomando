@@ -5,6 +5,11 @@ namespace Telomando.Models;
 
 public partial class TipoUsuario
 {
+    public TipoUsuario()
+    {
+        FechaRegistro = DateOnly.FromDateTime(DateTime.Now); // Inicializa con la fecha actual
+
+    }
     public int Idtipousuario { get; set; }
 
     public string Nombre { get; set; } = null!;
