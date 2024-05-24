@@ -27,6 +27,21 @@
                 </div>
             </a>
         </div>
+
+        <div class="col-md-3">
+            <a asp-controller="Direcciones" asp-action="ListaDirecciones" class="card-link">
+                <div class="card text-white bg-warning mb-3 position-relative">
+                    <div class="icon-circle bg-warning text-white">
+                        <i class="fas fa-address-book"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Direcciones</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
         <div class="col-md-3">
             <a asp-controller="Paises" asp-action="ListaPaises" class="card-link">
                 <div class="card text-white bg-success mb-3 position-relative">
@@ -42,8 +57,8 @@
         </div>
         <div class="col-md-3">
             <a asp-controller="Departamentos" asp-action="ListaDepartamentos" class="card-link">
-                <div class="card text-white bg-warning mb-3 position-relative">
-                    <div class="icon-circle bg-warning text-white">
+                <div class="card text-white bg-info mb-3 position-relative">
+                    <div class="icon-circle bg-info text-white">
                         <i class="fas fa-map"></i>
                     </div>
                     <div class="card-body text-center">
@@ -53,7 +68,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 mt-4">
             <a asp-controller="Municipios" asp-action="ListaMunicipios" class="card-link">
                 <div class="card text-white bg-danger mb-3 position-relative">
                     <div class="icon-circle bg-danger text-white">
@@ -125,8 +140,8 @@
 
         <div class="col-md-3 mt-4">
             <a asp-controller="BodegasProductos" asp-action="ListaBodegasProductos" class="card-link">
-                <div class="card text-white bg-warning mb-3 position-relative">
-                    <div class="icon-circle bg-warning text-white">
+                <div class="card text-white bg-secondary mb-3 position-relative">
+                    <div class="icon-circle bg-secondary text-white">
                         <i class="fas fa-newspaper"></i>
                     </div>
                     <div class="card-body text-center">
@@ -145,6 +160,133 @@
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Categorias</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="SubCategorias" asp-action="ListaSubCategorias" class="card-link">
+                <div class="card text-white bg-info mb-3 position-relative">
+                    <div class="icon-circle bg-info text-white">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Subcategorias</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Productos" asp-action="ListaProductos" class="card-link">
+                <div class="card text-white bg-danger mb-3 position-relative">
+                    <div class="icon-circle bg-danger text-white">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Productos</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Ciudades" asp-action="ListaCiudades" class="card-link">
+                <div class="card text-white bg-primary mb-3 position-relative">
+                    <div class="icon-circle bg-primary text-white">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ciudades</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Marcas" asp-action="ListaMarcas" class="card-link">
+                <div class="card text-white bg-secondary mb-3 position-relative">
+                    <div class="icon-circle bg-secondary text-white">
+                        <i class="fas fa-copyright"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Marcas</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Sucursales" asp-action="ListaSucursales" class="card-link">
+                <div class="card text-white bg-success mb-3 position-relative">
+                    <div class="icon-circle bg-success text-white">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sucursales</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="TipoBodegas" asp-action="ListaTiposBodegas" class="card-link">
+                <div class="card text-white bg-success mb-3 position-relative">
+                    <div class="icon-circle bg-success text-white">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tipos de Bodega</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="TipoPagos" asp-action="ListaTiposPagos" class="card-link">
+                <div class="card text-white bg-warning mb-3 position-relative">
+                    <div class="icon-circle bg-warning text-white">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tipos de pago</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="TiposTransportes" asp-action="ListaTiposTransportes" class="card-link">
+                <div class="card text-white bg-info mb-3 position-relative">
+                    <div class="icon-circle bg-info text-white">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Tipos de transporte</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Usuarios" asp-action="Index" class="card-link">
+                <div class="card text-white bg-danger mb-3 position-relative">
+                    <div class="icon-circle bg-danger text-white">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Usuarios</h5>
                         @* <p class="card-text">Gestión de monedas</p> *@
                     </div>
                 </div>
