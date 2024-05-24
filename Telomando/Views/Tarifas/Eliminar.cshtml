@@ -1,4 +1,4 @@
-﻿@model Telomando.Models.Departamento
+﻿@model Telomando.Models.Tarifa
 @{
     ViewData["Title"] = "Eliminar";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,17 +8,22 @@
 
 <div class="row">
     <div class="col-sm-4">
-        <form asp-action="Eliminar" asp-controller="Departamentos" method="post">
-            <input type="hidden" asp-for="Iddepartamento" />
+        <form asp-action="Eliminar" asp-controller="Tarifas" method="post">
+            <input type="hidden" asp-for="Idtarifa" />
 
             <div class="mb-3">
-                <label class="form-label" asp-for="oPaises.Idpaises">Pais</label>
-                <input class="form-control form-control-sm" asp-for="oPaises.Nombre" type="text" disabled />
+                <label class="form-label" asp-for="oMomedas.Idmoneda">Moneda</label>
+                <input class="form-control form-control-sm" asp-for="oMomedas.Nombre" type="text" disabled />
             </div>
 
             <div class="mb-2">
-                <label class="form-label" asp-for="Nombre">Departamento</label>
-                <input class="form-control form-control-sm" asp-for="Nombre" type="text" disabled />
+                <label class="form-label" asp-for="Valor">Valor</label>
+                <input class="form-control form-control-sm" asp-for="Valor" type="text" disabled />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="PorcentajeExtra">Porcentaje Extra</label>
+                <input class="form-control form-control-sm" asp-for="PorcentajeExtra" type="text" disabled />
             </div>
 
             <div class="mb-2">
@@ -39,7 +44,7 @@
             
             <div class="mb-2">
                 <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
-                <a class="btn btn-dark btn-sm" asp-action="ListaDepartamentos" asp-controller="Departamentos">Volver</a>
+                <a class="btn btn-dark btn-sm" asp-action="ListaTarifas" asp-controller="Tarifas">Volver</a>
 
             </div>
 

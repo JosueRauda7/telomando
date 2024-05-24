@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Data.Entity;
-using Telomando.Models;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+
+
 using Telomando.Models.ViewModels;
+using Telomando.Models;
+using System.Diagnostics;
 
 namespace Telomando.Controllers
 {
@@ -17,7 +20,7 @@ namespace Telomando.Controllers
 
         public IActionResult ListaTarifas()
         {
-            List<Tarifa> lista = _DBContext.Tarifas.Include(t=>t.IdmonedaNavigation).ToList();
+            List<Tarifa> lista = _DBContext.Tarifas.Include(t=>t.oMomedas).ToList();
 
 
             return View(lista);
@@ -51,9 +54,7 @@ namespace Telomando.Controllers
 
         public IActionResult Tarifas_Detalle(TarifaVM oTarifaVM)
         {
-            if (ModelState.IsValid)
-            {
-                if (oTarifaVM.oTarifas.Idtarifa == 0)
+           if (oTarifaVM.oTarifas.Idtarifa == 0)
                 {
                     _DBContext.Tarifas.Add(oTarifaVM.oTarifas);
 
@@ -61,17 +62,33 @@ namespace Telomando.Controllers
                 else
                 {
                     _DBContext.Tarifas.Update(oTarifaVM.oTarifas);
-                    _DBContext.SaveChanges();
-                    TempData["AlertMessage"] = "Registro creado exitosamente";
-                    TempData["AlertType"] = "success";
-                    return RedirectToAction("ListaTarifas", "Tarifas");
+                 
                 }
+
+                _DBContext.SaveChanges(); 
+                return RedirectToAction("ListaTarifas", "Tarifas");
             }
-            TempData["AlertMessage"] = "Error al crear el registro,revise los datos ingresados";
-            TempData["AlertType"] = "error";
-            return RedirectToAction("Tarifas_Detalle", "Tarifas", new { idTarifa = 0 });
+           
+
+        
+
+        public IActionResult Eliminar(int idTarifa)
+        {
+            Tarifa oTarifa = _DBContext.Tarifas.Include(m => m.oMomedas).Where(t => t.Idtarifa == idTarifa).FirstOrDefault();
+
+
+            return View(oTarifa);
 
         }
+
+        [HttpPost]
+         public IActionResult Eliminar(Tarifa oTarifa)
+         {
+             _DBContext.Tarifas.Remove(oTarifa);
+                _DBContext.SaveChanges();
+
+                return RedirectToAction("ListaTarifas", "Tarifas");
+         }
 
 
 

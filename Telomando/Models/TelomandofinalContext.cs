@@ -648,7 +648,7 @@ public partial class TelomandofinalContext : DbContext
                 .HasColumnType("decimal(16, 2)")
                 .HasColumnName("valor");
 
-            entity.HasOne(d => d.IdmonedaNavigation).WithMany(p => p.Tarifas)
+            entity.HasOne(d => d.oMomedas).WithMany(p => p.Tarifas)
                 .HasForeignKey(d => d.Idmoneda)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("tarifas$tarifas_ibfk_1");

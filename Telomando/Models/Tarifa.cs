@@ -32,5 +32,5 @@ public partial class Tarifa
     public virtual ICollection<Entrega> Entregas { get; set; } = new List<Entrega>();
 
 
-    public virtual Moneda IdmonedaNavigation { get; set; } = null!;
+    public virtual Moneda oMomedas { get; set; } = null!;
 }
