@@ -1,0 +1,95 @@
+﻿@model Telomando.Models.ViewModels.DireccionesVM
+@{
+    ViewData["Title"] = "Direccion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.oDirecciones.Iddireccion == 0)
+{
+    <h1>Crear Direccion</h1>
+}
+else
+{
+    <h1>Editar Direccion</h1>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Direccion_Detalle" asp-controller="Direcciones" method="post">
+            <input type="hidden" asp-for="oDirecciones.Iddireccion" />
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oDirecciones.Idusuario">Usuario</label>
+                <select class="form-select form-select-sm" asp-for="oDirecciones.Idusuario" asp-items="@Model.oListaUsuarios">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oDirecciones.Idsucursal">Sucursal</label>
+                <select class="form-select form-select-sm" asp-for="oDirecciones.Idsucursal" asp-items="@Model.oListaSucursales">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oDirecciones.Idciudad">Ciudad</label>
+                <select class="form-select form-select-sm" asp-for="oDirecciones.Idciudad" asp-items="@Model.oListaCiudades">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oDirecciones.Direccion1">Direccion 1</label>
+                <input class="form-control form-control-sm" asp-for="oDirecciones.Direccion1" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oDirecciones.Direccion2">Direccion 2</label>
+                <input class="form-control form-control-sm" asp-for="oDirecciones.Direccion2" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oDirecciones.Direccion3">Direccion 3</label>
+                <input class="form-control form-control-sm" asp-for="oDirecciones.Direccion3" type="text" />
+            </div>
+
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oDirecciones.FechaRegistro">Fecha de Creacion</label>
+                <input class="form-control form-control-sm" asp-for="oDirecciones.FechaRegistro" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="oDirecciones.Activo">Activo</label>
+                <input class="form-check-input" asp-for="oDirecciones.Activo" type="checkbox" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="oDirecciones.Eliminado">Eliminado</label>
+                <input class="form-check-input" asp-for="oDirecciones.Eliminado" type="checkbox" />
+            </div>
+
+            <div class="mb-2">
+
+                @if (Model.oDirecciones.Iddireccion == 0)
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Crear</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Actualizar</button>
+                }
+
+                <a class="btn btn-dark btn-sm" asp-action="ListaDirecciones" asp-controller="Direcciones">Volver</a>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+

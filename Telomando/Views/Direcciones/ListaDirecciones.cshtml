@@ -1,0 +1,60 @@
+﻿@model List<Telomando.Models.Direccione>
+@{
+    ViewData["Title"] = "Direcciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<<div class="text-center">
+    <h1 class="display-4">Direcciones</h1>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5>Direcciones</h5>
+    </div>
+    <div class="card-body">
+        <a class="btn-success btn-sm" asp-action="Direccion_Detalle" asp-controller="Direcciones" asp-route-iddireccion="0">Crear Nuevo</a>
+        <hr />
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Sucursal</th>
+                    <th>Ciudad</th>
+                    <th>Direccion 1</th>
+                    <th>Direccion 2</th>
+                    <th>Direccion 3</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Activo</th>
+                    <th>Eliminado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.oUsuario.Nombres</td>
+                        <td>@item.oSucursal.Nombre</td>
+                        <td>@item.oCiudad.Nombre</td>
+                        <td>@item.Direccion1</td>
+                        <td>@item.Direccion2</td>
+                        <td>@item.Direccion3</td>
+                        <td>@item.FechaRegistro</td>
+                        <td>@item.Activo</td>
+                        <td>@item.Eliminado</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Direccion_Detalle" asp-controller="Direcciones" asp-route-idDireccion="@item.Iddireccion">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Direcciones" asp-route-idDireccion="@item.Iddireccion">Eliminar</a>
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

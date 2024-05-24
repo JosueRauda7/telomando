@@ -278,16 +278,16 @@ public partial class TelomandofinalContext : DbContext
             entity.Property(e => e.Idsucursal).HasColumnName("idsucursal");
             entity.Property(e => e.Idusuario).HasColumnName("idusuario");
 
-            entity.HasOne(d => d.IdciudadNavigation).WithMany(p => p.Direcciones)
+            entity.HasOne(d => d.oCiudad).WithMany(p => p.Direcciones)
                 .HasForeignKey(d => d.Idciudad)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("direcciones$direcciones_ibfk_3");
 
-            entity.HasOne(d => d.IdsucursalNavigation).WithMany(p => p.Direcciones)
+            entity.HasOne(d => d.oSucursal).WithMany(p => p.Direcciones)
                 .HasForeignKey(d => d.Idsucursal)
                 .HasConstraintName("direcciones$direcciones_ibfk_2");
 
-            entity.HasOne(d => d.IdusuarioNavigation).WithMany(p => p.Direcciones)
+            entity.HasOne(d => d.oUsuario).WithMany(p => p.Direcciones)
                 .HasForeignKey(d => d.Idusuario)
                 .HasConstraintName("direcciones$direcciones_ibfk_1");
         });
