@@ -1,25 +1,25 @@
-﻿@model List<Telomando.Models.Paise>
+﻿@model List<Telomando.Models.TipoBodega>
 @{
-    ViewData["Title"] = "Paises";
+    ViewData["Title"] = "Tipos de Bodegas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Paises</h1>
+    <h1 class="display-4">Tipos de Bodegas</h1>
 
 </div>
 
 <div class="card">
     <div class="card-header">
-        <h5>Paises</h5>
+        <h5>Tipos de Bodegas</h5>
     </div>
     <div class="card-body">
-        <a class="btn-success btn-sm" asp-action="Paises_Detalle" asp-controller="Paises" asp-route-idpaises="0">Crear Nuevo</a>
+        <a class="btn-success btn-sm" asp-action="TipoBodega_Detalle" asp-controller="TipoBodegas" asp-route-idTipoBodega="0">Crear Nuevo</a>
         <hr />
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Pais</th>
+                    <th>Tipo de Bodega</th>
                     <th>Fecha de Creacion</th>
                     <th>Activo</th>
                     <th>Eliminado</th>
@@ -36,8 +36,8 @@
                         <td>@item.Eliminado</td>
 
                         <td>
-                            <a class="btn btn-primary btn-sm" asp-action="Paises_Detalle" asp-controller="Paises" asp-route-idPais="@item.Idpaises">Editar</a>
-                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Paises" asp-route-idPais="@item.Idpaises">Eliminar</a>
+                            <a class="btn btn-primary btn-sm" asp-action="TipoBodega_Detalle" asp-controller="TipoBodegas" asp-route-idTipoBodega="@item.Idtipobodega">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="TipoBodegas" asp-route-idTipoBodega="@item.Idtipobodega">Eliminar</a>
                         </td>
 
                     </tr>
@@ -48,3 +48,4 @@
     </div>
 
 </div>
+

@@ -17,5 +17,5 @@ public partial class SubCategoria
 
     public bool Eliminado { get; set; }
 
-    public virtual Categoria IdcategoriaNavigation { get; set; } = null!;
+    public virtual Categoria oCategoria { get; set; } = null!;
 }

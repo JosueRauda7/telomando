@@ -21,7 +21,7 @@ public partial class Bodega
 
     public virtual ICollection<Entrega> Entregas { get; set; } = new List<Entrega>();
 
-    public virtual Sucursale IdsucursalNavigation { get; set; } = null!;
+    public virtual Sucursale oSucursal { get; set; } = null!;
 
-    public virtual TipoBodega IdtipobodegaNavigation { get; set; } = null!;
+    public virtual TipoBodega oTipoBodega { get; set; } = null!;
 }

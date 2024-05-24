@@ -19,7 +19,7 @@ public partial class BodegaProducto
 
     public bool Eliminado { get; set; }
 
-    public virtual Bodega IdbodegaNavigation { get; set; } = null!;
+    public virtual Bodega oBodega { get; set; } = null!;
 
-    public virtual Producto IdproductoNavigation { get; set; } = null!;
+    public virtual Producto oProducto { get; set; } = null!;
 }
