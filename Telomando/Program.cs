@@ -3,7 +3,7 @@ using Telomando.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Conexión a Base de Datos
+// Conexiï¿½n a Base de Datos
 builder.Services.AddDbContext<TelomandofinalContext>(options => options.UseSqlServer("name=ConnectionStrings:Connection"));
 
 // Add services to the container.

@@ -93,10 +93,11 @@ namespace Telomando.Controllers
 
             TempData["AlertMessage"] = "Error al crear el registro";
             TempData["AlertType"] = "error";
-            return View(oPais);
+            return RedirectToAction("Paises_Detalle", "Paises", new { idPais = 0 });
 
 
-            
+
+
         }
     }
 }

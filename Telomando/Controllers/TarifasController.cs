@@ -47,20 +47,32 @@ namespace Telomando.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
+
         public IActionResult Tarifas_Detalle(TarifaVM oTarifaVM)
         {
-            if (oTarifaVM.oTarifas.Idtarifa == 0)
+            if (ModelState.IsValid)
             {
-                _DBContext.Tarifas.Add(oTarifaVM.oTarifas);
+                if (oTarifaVM.oTarifas.Idtarifa == 0)
+                {
+                    _DBContext.Tarifas.Add(oTarifaVM.oTarifas);
 
+                }
+                else
+                {
+                    _DBContext.Tarifas.Update(oTarifaVM.oTarifas);
+                    _DBContext.SaveChanges();
+                    TempData["AlertMessage"] = "Registro creado exitosamente";
+                    TempData["AlertType"] = "success";
+                    return RedirectToAction("ListaTarifas", "Tarifas");
+                }
             }
-            else
-            {
-                _DBContext.Tarifas.Update(oTarifaVM.oTarifas);
-            }
-            _DBContext.SaveChanges();
-            return RedirectToAction("ListaTarifas", "Tarifas");
+            TempData["AlertMessage"] = "Error al crear el registro,revise los datos ingresados";
+            TempData["AlertType"] = "error";
+            return RedirectToAction("Tarifas_Detalle", "Tarifas", new { idTarifa = 0 });
+
         }
+
 
 
     }

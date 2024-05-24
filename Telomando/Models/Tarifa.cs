@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Telomando.Models;
 
@@ -12,11 +13,15 @@ public partial class Tarifa
     }
     public int Idtarifa { get; set; }
 
+    [Required(ErrorMessage = "Campo requerido.")]
     public int Idmoneda { get; set; }
+    [Required(ErrorMessage = "Campo requerido.")]
 
     public decimal Valor { get; set; }
+    [Required(ErrorMessage = "Campo requerido.")]
 
     public decimal? PorcentajeExtra { get; set; }
+    [Required(ErrorMessage = "Campo requerido.")]
 
     public DateOnly FechaRegistro { get; set; }
 

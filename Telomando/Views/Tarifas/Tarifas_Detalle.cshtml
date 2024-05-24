@@ -17,17 +17,32 @@ else
 <div class="row">
     <div class="col-sm-4">
         <form asp-action="Tarifas_Detalle" asp-controller="Tarifas" method="post">
-            <input type="hidden" asp-for="oTarifas.Idtarifa" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
+            <input type="hidden" asp-for="oTarifas.Idtarifa" />
+            @if (ViewData.ModelState["Idmoneda"] != null && ViewData.ModelState["Idmoneda"].Errors.Count > 0)
+            {
+                <div class="text-danger">
+                    @ViewData.ModelState["Idmoneda"].Errors[0].ErrorMessage
+                </div>
+            }
             <div class="mb-3">
-                <label class="form-label" asp-for="oTarifas.IdmonedaNavigation">Moneda</label>
+                
+                <label class="form-label" asp-for="oTarifas.Idmoneda">Moneda</label>
                 <select class="form-select form-select-sm" asp-for="oTarifas.Idmoneda" asp-items="@Model.oListaMonedas">
                     <option selected disabled>--Seleccionar--</option>
 
                 </select>
             </div>
-
+            @if (ViewData.ModelState["Valor"] != null && ViewData.ModelState["Valor"].Errors.Count > 0)
+            {
+                <div class="text-danger">
+                    @ViewData.ModelState["Valor"].Errors[0].ErrorMessage
+                </div>
+            }
             <div class="mb-2">
+                <span asp-validation-for="oTarifas.Valor" class="text-danger"></span>
+
                 <label class="form-label" asp-for="oTarifas.Valor">Valor</label>
                 <input class="form-control form-control-sm" asp-for="oTarifas.Valor" type="text" />
             </div>
