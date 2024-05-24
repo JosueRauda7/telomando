@@ -80,9 +80,9 @@
                 @Html.DisplayFor(modelItem => item.IdtipousuarioNavigation.Idtipousuario)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Idusuario">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Idusuario">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Idusuario">Delete</a>
+                <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Idusuario">Editar</a> |
+                    <a class="btn btn-success btn-sm" asp-action="Details" asp-route-id="@item.Idusuario">Ver</a> |
+                <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Idusuario">Borrar</a>
 
 
             </td>

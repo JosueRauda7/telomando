@@ -17,7 +17,9 @@ else
     <div class="col-sm-4">
         <form asp-action="Bodega_Detalle" asp-controller="Bodegas" method="post">
             <input type="hidden" asp-for="oBodega.Idbodega" />
+         
 
+        
             <div class="mb-3">
                 <label class="form-label" asp-for="oBodega.Idtipobodega">Tipo Bodega</label>
                 <select class="form-select form-select-sm" asp-for="oBodega.Idtipobodega" asp-items="@Model.oListaTipoBodega">

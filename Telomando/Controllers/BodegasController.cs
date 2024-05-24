@@ -75,19 +75,28 @@ namespace Telomando.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Bodega_Detalle(BodegaVM oBodegaVM)
         {
-            if (oBodegaVM.oBodega.Idbodega == 0)
+            if (ModelState.IsValid)
             {
-                _DBContext.Bodegas.Add(oBodegaVM.oBodega);
+                if (oBodegaVM.oBodega.Idbodega == 0)
+                {
+                    _DBContext.Bodegas.Add(oBodegaVM.oBodega);
 
+                }
+                else
+                {
+                    _DBContext.Bodegas.Update(oBodegaVM.oBodega);
+                }
+                _DBContext.SaveChanges();
+                return RedirectToAction("ListaBodegas", "Bodegas");
             }
-            else
-            {
-                _DBContext.Bodegas.Update(oBodegaVM.oBodega);
-            }
-            _DBContext.SaveChanges();
-            return RedirectToAction("ListaBodegas", "Bodegas");
+
+            TempData["AlertMessage"] = "Error al crear el registro";
+            TempData["AlertType"] = "error";
+            return RedirectToAction("Bodega_Detalle", "Bodegas", new { idbodega = 0 });
+
         }
     }
 }
