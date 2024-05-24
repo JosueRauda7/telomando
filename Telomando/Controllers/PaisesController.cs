@@ -56,19 +56,34 @@ namespace Telomando.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Paises_Detalle(Paise oPais)
         {
-            if (oPais.Idpaises == 0)
-            {
-                _DBContext.Paises.Add(oPais);
 
-            }
-            else
+
+            if (ModelState.IsValid)
             {
-                _DBContext.Paises.Update(oPais);
+                if (oPais.Idpaises == 0)
+                {
+                    _DBContext.Paises.Add(oPais);
+
+                }
+                else
+                {
+                    _DBContext.Paises.Update(oPais);
+                }
+                _DBContext.SaveChanges();
+                TempData["AlertMessage"] = "Registro creado exitosamente";
+                TempData["AlertType"] = "success"; 
+                return RedirectToAction("ListaPaises", "Paises");
             }
-            _DBContext.SaveChanges();
-            return RedirectToAction("ListaPaises", "Paises");
+
+            TempData["AlertMessage"] = "Error al crear el registro";
+            TempData["AlertType"] = "error";
+            return View(oPais);
+
+
+            
         }
     }
 }
