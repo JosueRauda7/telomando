@@ -11,12 +11,15 @@
 
 <div class="card">
     <div class="card-header">
-        <h5>Marcas</h5>
+        <button onclick="generateExcel()" class="btn btn-success btn-sm">
+            Reporte Excel
+            <i class="fas fa-file-excel"></i>
+        </button>
     </div>
     <div class="card-body">
         <a class="btn-success btn-sm" asp-action="Marca_Detalle" asp-controller="Marcas" asp-route-idmarca="0">Crear Nuevo</a>
         <hr />
-        <table class="table table-striped">
+        <table class="table table-striped" id="reportTable">
             <thead>
                 <tr>
                     <th>Marca</th>
@@ -38,6 +41,11 @@
                         <td>
                             <a class="btn btn-primary btn-sm" asp-action="Marca_Detalle" asp-controller="Marcas" asp-route-idMarca="@item.Idmarca">Editar</a>
                             <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Marcas" asp-route-idMarca="@item.Idmarca">Eliminar</a>
+                            <button onclick="generateExcel()" class="btn btn-success btn-sm">
+                                Reporte Excel
+                                <i class="fas fa-file-excel"></i>
+                            </button>
+
                         </td>
 
                     </tr>
@@ -49,3 +57,14 @@
 
 </div>
 
+
+<script>
+    function generateExcel() {
+        var table = document.getElementById('reportTable');
+        var workbook = XLSX.utils.book_new();
+        var worksheet = XLSX.utils.table_to_sheet(table);
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Reporte");
+
+        XLSX.writeFile(workbook, 'Reporte.xlsx');
+    }
+</script>

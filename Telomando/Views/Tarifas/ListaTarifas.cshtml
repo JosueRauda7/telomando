@@ -11,12 +11,15 @@
 
 <div class="card">
     <div class="card-header">
-        <h5>Tarifas</h5>
+        <button onclick="generateExcel()" class="btn btn-success btn-sm">
+            Reporte Excel
+            <i class="fas fa-file-excel"></i>
+        </button>
     </div>
     <div class="card-body">
         <a class="btn-success btn-sm" asp-action="Tarifas_Detalle" asp-controller="Tarifas" asp-route-idTarifa="0">Crear Nuevo</a>
         <hr />
-        <table class="table table-striped">
+        <table class="table table-striped" id="reportTable">
             <thead>
                 <tr>
                     <th>Moneda</th>
@@ -41,7 +44,15 @@
                         <td>@item.Eliminado</td>
                         <td>
                             <a class="btn btn-primary btn-sm" asp-action="Tarifas_Detalle" asp-controller="Tarifas" asp-route-idTarifa="@item.Idtarifa">Editar</a>
+<<<<<<< HEAD
                             <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Tarifas" asp-route-idTarifa="@item.Idtarifa">Eliminar</a>
+=======
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Tarifas" asp-route-idDepartamento="@item.Idtarifa">Eliminar</a>
+                            <button onclick="generateExcel()" class="btn btn-success btn-sm">
+                                Reporte Excel
+                                <i class="fas fa-file-excel"></i>
+                            </button>
+>>>>>>> 4b8180ca32fe22331e454da8b70890f667f9de6c
                         </td>
 
                     </tr>
@@ -52,3 +63,16 @@
     </div>
 
 </div>
+
+
+
+<script>
+    function generateExcel() {
+        var table = document.getElementById('reportTable');
+        var workbook = XLSX.utils.book_new();
+        var worksheet = XLSX.utils.table_to_sheet(table);
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Reporte");
+
+        XLSX.writeFile(workbook, 'Reporte.xlsx');
+    }
+</script>

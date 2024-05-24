@@ -10,7 +10,13 @@
 <p>
     <a asp-action="Create">Crear nuevo</a>
 </p>
-<table class="table">
+<div class="card-header">
+    <button onclick="generateExcel()" class="btn btn-success btn-sm">
+        Reporte Excel
+        <i class="fas fa-file-excel"></i>
+    </button>
+</div>
+<table class="table" id="reportTable">
     <thead>
         <tr>
             <th>
@@ -47,8 +53,24 @@
                 <a asp-action="Edit" asp-route-id="@item.Idmoneda" class="btn btn-primary">Editar</a> |
                 <a asp-action="Details" asp-route-id="@item.Idmoneda" class="btn btn-warning">Ver</a> |
                 <a asp-action="Delete" asp-route-id="@item.Idmoneda" class="btn btn-danger">Borrar</a>
+                    <button onclick="generateExcel()" class="btn btn-success btn-sm">
+                        Reporte Excel
+                        <i class="fas fa-file-excel"></i>
+                    </button>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+
+<script>
+    function generateExcel() {
+        var table = document.getElementById('reportTable');
+        var workbook = XLSX.utils.book_new();
+        var worksheet = XLSX.utils.table_to_sheet(table);
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Reporte");
+
+        XLSX.writeFile(workbook, 'Reporte.xlsx');
+    }
+</script>
