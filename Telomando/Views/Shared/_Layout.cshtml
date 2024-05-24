@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Telomando.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"  crossorigin="anonymous" />
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -75,6 +75,17 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
+            @if (TempData["AlertMessage"] != null)
+            {
+                <script type="text/javascript">
+                    Swal.fire({
+                        icon: '@TempData["AlertType"]',
+                        title: 'Alert',
+                        text: '@TempData["AlertMessage"]'
+                    });
+                </script>
+            }
+            <!-- Otros elementos body -->
         </main>
     </div>
    

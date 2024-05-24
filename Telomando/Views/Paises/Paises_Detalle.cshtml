@@ -14,15 +14,27 @@ else
 
 <div class="row">
     <div class="col-sm-4">
+
         <form asp-action="Paises_Detalle" asp-controller="Paises" method="post">
             <input type="hidden" asp-for="Idpaises" />
 
+            @if (ViewData.ModelState["Nombre"] != null && ViewData.ModelState["Nombre"].Errors.Count > 0)
+            {
+                <div class="text-danger">
+                    @ViewData.ModelState["Nombre"].Errors[0].ErrorMessage
+                </div>
+            }
             <div class="mb-2">
                 <label class="form-label" asp-for="Nombre">Pais</label>
                 <input class="form-control form-control-sm" asp-for="Nombre" type="text" />
             </div>
 
-
+            @if (ViewData.ModelState["FechaRegistro"] != null && ViewData.ModelState["FechaRegistro"].Errors.Count > 0)
+            {
+                <div class="text-danger">
+                    @ViewData.ModelState["FechaRegistro"].Errors[0].ErrorMessage
+                </div>
+            }
             <div class="mb-2">
                 <label class="form-label" asp-for="FechaRegistro">Fecha Creacion</label>
                 <input class="form-control form-control-sm" asp-for="FechaRegistro" type="text" />
