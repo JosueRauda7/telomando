@@ -97,9 +97,30 @@
  *@
 
 
-                        <li class="nav-item ms-auto mb-lg-0">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Ingresar</a>
-                        </li>
+                        
+                            @using Telomando.Extensions
+                            @{
+                                UsuarioLoginData usuarioData = Context.Session.GetObject<UsuarioLoginData>("usuario");
+                                if (usuarioData == null || !usuarioData.logueado)
+                                {
+                                    <li class="nav-item ms-auto mb-lg-0">
+                                        <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Ingresar</a>
+                                    </li>
+                                }
+
+                                if (usuarioData != null && usuarioData.logueado)
+                                {
+                                    <div class="ms-auto mb-lg-0 d-inline-block">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="UsuarioInfo" asp-action="Edit">@usuarioData.username</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Cerrar Sesión</a>
+                                        </li>
+                                    </div>
+                                }
+                            }
+                        
 
                     </ul>
                 </div>

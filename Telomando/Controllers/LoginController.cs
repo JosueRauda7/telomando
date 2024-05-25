@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Data.Entity;
 using System.Security.Cryptography;
 using System.Text;
+using Telomando.Extensions;
 using Telomando.Models;
 
 namespace Telomando.Controllers
@@ -18,6 +19,14 @@ namespace Telomando.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Logout()
+        {
+            UsuarioLoginData usuarioLoginData = HttpContext.Session.GetObject<UsuarioLoginData>("usuario");
+            usuarioLoginData.logueado = false;
+            HttpContext.Session.SetObject("usuario", usuarioLoginData);
+            return View("Index");
         }
 
         [HttpPost]
@@ -36,17 +45,27 @@ namespace Telomando.Controllers
                     Usuario usuario = _DBContext.Usuarios.Find(email.Idusuario);
                     usuario.Logueado = "SI";
 
-                    /*
-                    HttpContext.Session.SetInt32("idusuario", email.Idusuario);
-                    HttpContext.Session.SetString("correo", email.Email1);
-                    HttpContext.Session.SetString("nombre", usuario.Nombres);
-                    HttpContext.Session.SetString("apellido", usuario.Apellidos);
-                    HttpContext.Session.SetString("logueado", usuario.Logueado);
-                    */
+                    UsuarioLoginData usuarioLoginData = new UsuarioLoginData();
+                    usuarioLoginData.idUsuario = email.Idusuario;
+                    usuarioLoginData.username = usuario.Nombres + " " + usuario.Apellidos;
+                    usuarioLoginData.correo = correo;
+                    usuarioLoginData.logueado = true;
+                    usuarioLoginData.idTipoUsuario = usuario.Idtipousuario;
+
+                    HttpContext.Session.SetObject("usuario", usuarioLoginData);
+
                     _DBContext.SaveChanges();
                     
                     return RedirectToAction("Index","Home");
                 }
+            }
+
+            // cerrar sesión
+            UsuarioLoginData usuarioSesion = HttpContext.Session.GetObject<UsuarioLoginData>("usuario");
+            if(usuarioSesion != null)
+            {
+                usuarioSesion.logueado = false;
+                HttpContext.Session.SetObject("usuario", usuarioSesion);
             }
 
             ViewBag.error += "Credenciales incorrectas.";
@@ -145,13 +164,14 @@ namespace Telomando.Controllers
             _DBContext.Clientes.Add(cliente);
             _DBContext.SaveChanges();
 
-            /*
-            HttpContext.Session.SetInt32("idusuario",usuario.Idusuario);
-            HttpContext.Session.SetString("correo", email.Email1);
-            HttpContext.Session.SetString("nombre", usuario.Nombres);
-            HttpContext.Session.SetString("apellido", usuario.Apellidos);
-            HttpContext.Session.SetString("logueado", usuario.Logueado);
-            */
+            UsuarioLoginData usuarioLoginData = new UsuarioLoginData();
+            usuarioLoginData.idUsuario = usuario.Idusuario;
+            usuarioLoginData.username = usuario.Nombres + " " + usuario.Apellidos;
+            usuarioLoginData.correo = email.Email1;
+            usuarioLoginData.logueado = true;
+            usuarioLoginData.idTipoUsuario = 2;
+
+            HttpContext.Session.SetObject("usuario", usuarioLoginData);
 
             return RedirectToAction("Index", "Home");
         }
