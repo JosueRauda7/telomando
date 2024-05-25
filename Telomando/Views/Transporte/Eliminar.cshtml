@@ -1,0 +1,55 @@
+﻿@model Telomando.Models.Transporte
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<<h3 class="text-danger">Realmente Desea Eliminar el Registro?</h3>
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Eliminar" asp-controller="Transporte" method="post">
+            <input type="hidden" asp-for="Idtransporte" />
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Idmarcatransporte">Marca transporte</label>
+                <select disabled id="Idmarcatransporte" class="form-control" name="Idmarcatransporte" asp-for="Idmarcatransporte">
+                    <option value="">Seleccione una marca</option>
+                    @foreach (var marca in ViewBag.ListaMarcas)
+                    {
+                        <option value="@marca.Idmarcatransporte">@marca.Nombre</option>
+                    }
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" asp-for="Idtipotransporte">Tipo transporte</label>
+                <select disabled id="Idtipotransporte" class="form-control" name="Idtipotransporte" asp-for="Idtipotransporte">
+                    <option value="">Seleccione un tipo</option>
+                    @foreach (var tipo in ViewBag.ListaTipoTransporte)
+                    {
+                        <option value="@tipo.Idtipotransporte">@tipo.Nombre</option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="Placa">Placa</label>
+                <input class="form-control form-control" asp-for="Placa" type="text" disabled />
+            </div>
+
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="Activo">Activo</label>
+                <input class="form-check-input" name="Activo" type="checkbox" asp-for="Activo" disabled />
+            </div>
+
+            <div class="mb-2">
+                <button class="btn btn-danger btn-sm w-25" type="submit">Eliminar</button>
+                <a class="btn btn-dark btn-sm" asp-action="ListaTransporte" asp-controller="Transporte">Volver</a>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+

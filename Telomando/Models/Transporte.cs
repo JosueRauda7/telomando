@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Telomando.Models;
 
@@ -29,4 +30,8 @@ public partial class Transporte
     public virtual ICollection<TransporteSucursal> TransporteSucursals { get; set; } = new List<TransporteSucursal>();
 
     public virtual ICollection<TransporteUsuario> TransporteUsuarios { get; set; } = new List<TransporteUsuario>();
+    [NotMapped]
+    public virtual MarcaTransporte MarcaTransporte { get; set; } = null!;
+    [NotMapped]
+    public virtual TipoTransporte TipoTransporte { get; set; } = null!;
 }
