@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Security.Cryptography;
 using System.Text;
 using Telomando.Models;
+using System.;
 
 namespace Telomando.Controllers
 {
@@ -33,6 +34,15 @@ namespace Telomando.Controllers
             if(email != null && usuarioPassword != null) {
                 if(email.Idusuario == usuarioPassword.Idusuario)
                 {
+                    Usuario usuario = _DBContext.Usuarios.Find(email.Idusuario);
+                    usuario.Logueado = "SI";
+
+                    Session["usuarioId"] = usuario.Idusuario;
+                    Session["correo"] = email.Email1;
+                    Session["nombreCompleto"] = usuario.Nombres+" "+usuario.Apellidos;
+                    Session["logueado"] = usuario.Logueado;
+                    _DBContext.SaveChanges();
+                    
                     return RedirectToAction("Index","Home");
                 }
             }
@@ -123,6 +133,12 @@ namespace Telomando.Controllers
             email.Eliminado = false;
             _DBContext.Emails.Add(email);
             _DBContext.SaveChanges();
+
+            HttpContext.Session.SetInt32("idusuario",usuario.Idusuario);
+            HttpContext.Session.SetString("correo", email.Email1);
+            HttpContext.Session.SetString("nombre", usuario.Nombres);
+            HttpContext.Session.SetString("apellido", usuario.Apellidos);
+            HttpContext.Session.SetString("logueado", usuario.Logueado);
 
             return RedirectToAction("Index", "Home");
         }

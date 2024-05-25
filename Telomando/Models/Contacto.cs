@@ -17,7 +17,7 @@ public partial class Contacto
 
     public string Contacto1 { get; set; } = null!;
 
-    public string Contacto2 { get; set; } = null!;
+    public string Contacto2 { get; set; }
 
     public DateOnly FechaRegistro { get; set; }
 
