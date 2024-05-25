@@ -5,7 +5,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Marcas</h1>
+    <h1 class="display-4">Marcas de productos</h1>
 
 </div>
 
@@ -41,10 +41,6 @@
                         <td>
                             <a class="btn btn-primary btn-sm" asp-action="Marca_Detalle" asp-controller="Marcas" asp-route-idMarca="@item.Idmarca">Editar</a>
                             <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Marcas" asp-route-idMarca="@item.Idmarca">Eliminar</a>
-                            <button onclick="generateExcel()" class="btn btn-success btn-sm">
-                                Reporte Excel
-                                <i class="fas fa-file-excel"></i>
-                            </button>
 
                         </td>
 
