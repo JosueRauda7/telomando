@@ -32,7 +32,7 @@ namespace Telomando.Controllers
         [HttpPost]
         public ActionResult Validate(string correo, string password)
         {
-            Email email = _DBContext.Emails.Include(email => email.Email1).Where(email => email.Email1 == correo).FirstOrDefault();
+            Email email = _DBContext.Emails.Include(email => email.Email1).Where(email => email.Email1.Equals(correo)).FirstOrDefault();
             byte[] bytePassword = Encoding.UTF8.GetBytes(password);
             SHA512 sha512 = SHA512.Create();
             byte[] passwordToBytes = sha512.ComputeHash(bytePassword);
