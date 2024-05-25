@@ -35,15 +35,15 @@ public partial class Entrega
 
     public bool Eliminado { get; set; }
 
-    public virtual Bodega IdbodegaNavigation { get; set; } = null!;
+    public virtual Bodega oBodega { get; set; } = null!;
 
-    public virtual Cliente IdclienteNavigation { get; set; } = null!;
+    public virtual Cliente oCliente { get; set; } = null!;
 
-    public virtual Direccione IddireccionNavigation { get; set; } = null!;
+    public virtual Direccione oDireccion { get; set; } = null!;
 
-    public virtual Tarifa IdtarifaNavigation { get; set; } = null!;
+    public virtual Tarifa oTarifa { get; set; } = null!;
 
-    public virtual TipoPago IdtipopagoNavigation { get; set; } = null!;
+    public virtual TipoPago oTipoPago { get; set; } = null!;
 
-    public virtual Transporte IdtransporteNavigation { get; set; } = null!;
+    public virtual Transporte oTrasnporte { get; set; } = null!;
 }
