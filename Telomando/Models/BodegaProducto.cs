@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Telomando.Models;
 
@@ -11,10 +12,13 @@ public partial class BodegaProducto
 
     }
     public int Idbodegaproducto { get; set; }
+    [Required(ErrorMessage = "Campo obligatorio.")]
 
     public int Idbodega { get; set; }
+    [Required(ErrorMessage = "Campo obligatorio.")]
 
     public int Idproducto { get; set; }
+    [Required(ErrorMessage = "Campo obligatorio.")]
 
     public int Stock { get; set; }
 

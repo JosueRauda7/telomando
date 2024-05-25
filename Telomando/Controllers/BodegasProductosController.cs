@@ -75,8 +75,10 @@ namespace Telomando.Controllers
         }
 
         [HttpPost]
-        public IActionResult BodegaProducto_Detalle(BodegasProductosVM oBodegaProductoVM)
+
+        public IActionResult BodegaProducto_Detalle( BodegasProductosVM oBodegaProductoVM)
         {
+            
             if (oBodegaProductoVM.oBodegaProducto.Idbodegaproducto == 0)
             {
                 _DBContext.BodegaProductos.Add(oBodegaProductoVM.oBodegaProducto);
@@ -88,6 +90,8 @@ namespace Telomando.Controllers
             }
             _DBContext.SaveChanges();
             return RedirectToAction("ListaBodegasProductos", "BodegasProductos");
+        
+
         }
     }
 }

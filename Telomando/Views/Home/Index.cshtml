@@ -17,6 +17,9 @@
         @using Telomando.Extensions
         @{
             UsuarioLoginData usuarioData = Context.Session.GetObject<UsuarioLoginData>("usuario");
+            if(usuarioData != null)
+            {
+                
             if(usuarioData.idTipoUsuario == 1)
             {
                 <div class="col-md-3">
@@ -58,7 +61,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-3 mt-4">
+                <div class="col-md-3">
                     <a asp-controller="Municipios" asp-action="ListaMunicipios" class="card-link">
                         <div class="card text-white bg-danger mb-3 position-relative">
                             <div class="icon-circle bg-danger text-white">
@@ -324,9 +327,10 @@
                     </a>
                 </div>
             }
+            }
         }
 
-        <div class="col-md-3">
+        <div class="col-md-3 mt-4">
             <a asp-controller="Direcciones" asp-action="ListaDirecciones" class="card-link">
                 <div class="card text-white bg-warning mb-3 position-relative">
                     <div class="icon-circle bg-warning text-white">
@@ -334,6 +338,21 @@
                     </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Direcciones</h5>
+                        @* <p class="card-text">Gestión de monedas</p> *@
+                    </div>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-3 mt-4">
+            <a asp-controller="Entregas" asp-action="ListaEntregas" class="card-link">
+                <div class="card text-white bg-warning mb-3 position-relative">
+                    <div class="icon-circle bg-warning text-white">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Entregas</h5>
                         @* <p class="card-text">Gestión de monedas</p> *@
                     </div>
                 </div>

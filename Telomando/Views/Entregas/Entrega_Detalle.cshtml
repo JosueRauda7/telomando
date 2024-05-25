@@ -1,0 +1,115 @@
+﻿@model Telomando.Models.ViewModels.EntregasVM
+@{
+    ViewData["Title"] = "Entrega";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.oEntrega.Identrega == 0)
+{
+    <h1>Crear Entrega</h1>
+}
+else
+{
+    <h1>Editar Entrega</h1>
+}
+
+<div class="row">
+    <div class="col-sm-4">
+        <form asp-action="Entrega_Detalle" asp-controller="Entregas" method="post">
+            <input type="hidden" asp-for="oEntrega.Identrega" />
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oEntrega.Codigo">Codigo</label>
+                <input class="form-control form-control-sm" asp-for="oEntrega.Codigo" type="text" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oEntrega.Idcliente">Cliente</label>
+                <select class="form-select form-select-sm" asp-for="oEntrega.Idcliente" asp-items="@Model.oListaCliente">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oEntrega.Iddireccion">Direccion</label>
+                <select class="form-select form-select-sm" asp-for="oEntrega.Iddireccion" asp-items="@Model.oListaDireccion">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oEntrega.InformacionAdicional">Informacion Adicional</label>
+                <input class="form-control form-control-sm" asp-for="oEntrega.InformacionAdicional" type="text" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oEntrega.Idtipopago">Tipo de Pago</label>
+                <select class="form-select form-select-sm" asp-for="oEntrega.Idtipopago" asp-items="@Model.oListaTipoPago">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oEntrega.Idtransporte">Transporte</label>
+                <select class="form-select form-select-sm" asp-for="oEntrega.Idtransporte" asp-items="@Model.oListaTransporte">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oEntrega.Idtarifa">Tarifa</label>
+                <select class="form-select form-select-sm" asp-for="oEntrega.Idtarifa" asp-items="@Model.oListaTarifa">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="oEntrega.Idbodega">Bodega</label>
+                <select class="form-select form-select-sm" asp-for="oEntrega.Idbodega" asp-items="@Model.oListaBodega">
+                    <option selected disabled>--Seleccionar--</option>
+
+                </select>
+            </div>
+
+
+
+            <div class="mb-2">
+                <label class="form-label" asp-for="oEntrega.FechaRegistro">Fecha de Creacion</label>
+                <input class="form-control form-control-sm" asp-for="oEntrega.FechaRegistro" type="text" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="oEntrega.Activo">Activo</label>
+                <input class="form-check-input" asp-for="oEntrega.Activo" type="checkbox" />
+            </div>
+
+            <div class="mb-2">
+                <label class="form-check-label" asp-for="oEntrega.Eliminado">Eliminado</label>
+                <input class="form-check-input" asp-for="oEntrega.Eliminado" type="checkbox" />
+            </div>
+
+            <div class="mb-2">
+
+                @if (Model.oEntrega.Identrega == 0)
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Crear</button>
+                }
+                else
+                {
+                    <button class="btn btn-primary btn-sm w-25" type="submit">Actualizar</button>
+                }
+
+                <a class="btn btn-dark btn-sm" asp-action="ListaEntregas" asp-controller="Entregas">Volver</a>
+
+            </div>
+
+        </form>
+    </div>
+</div>
+

@@ -16,6 +16,29 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 
+    @using Telomando.Extensions
+    @{
+        UsuarioLoginData usuarioData = Context.Session.GetObject<UsuarioLoginData>("usuario");
+        if(usuarioData == null)
+        {
+                        <script>
+                            if (!window.location.pathname.includes("Login")) {
+                                window.location.href = "@Url.Action("Index", "Login")";
+                            }
+                        </script>
+        }
+        else
+        {
+            if (!usuarioData.logueado)
+            {
+                        <script>
+                            if (!window.location.pathname.includes("Login")) {
+                                window.location.href = "@Url.Action("Index", "Login")";
+                            }
+                        </script>
+            }
+        }
+    }
 </head>
 <body>
     <header>
@@ -103,21 +126,21 @@
                                 UsuarioLoginData usuarioData = Context.Session.GetObject<UsuarioLoginData>("usuario");
                                 if (usuarioData == null || !usuarioData.logueado)
                                 {
-                                    <li class="nav-item ms-auto mb-lg-0">
-                                        <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Ingresar</a>
-                                    </li>
+                                                <li class="nav-item ms-auto mb-lg-0">
+                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Index">Ingresar</a>
+                                                </li>
                                 }
 
                                 if (usuarioData != null && usuarioData.logueado)
                                 {
-                                    <div class="ms-auto mb-lg-0 d-inline-block">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="UsuarioInfo" asp-action="Edit">@usuarioData.username</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Cerrar Sesión</a>
-                                        </li>
-                                    </div>
+                                                <div class="ms-auto mb-lg-0 d-inline-block">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-dark" asp-area="" asp-controller="UsuarioInfo" asp-action="Edit">@usuarioData.username</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Logout">Cerrar Sesión</a>
+                                                    </li>
+                                                </div>
                                 }
                             }
                         
