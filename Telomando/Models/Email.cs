@@ -17,7 +17,7 @@ public partial class Email
 
     public string Email1 { get; set; } = null!;
 
-    public string Email2 { get; set; } = null!;
+    public string Email2 { get; set; }
 
     public DateOnly FechaRegistro { get; set; }
 

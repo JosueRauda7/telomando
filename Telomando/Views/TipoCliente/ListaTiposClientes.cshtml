@@ -40,10 +40,7 @@
                         <td>
                             <a class="btn btn-primary btn-sm" asp-action="TiposClientes_Detalle" asp-controller="TipoCliente" asp-route-idTipoCliente="@item.Idtipocliente">Editar</a>
                             <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="TipoCliente" asp-route-idTipoCliente="@item.Idtipocliente">Eliminar</a>
-                            <button onclick="generateExcel()" class="btn btn-success btn-sm">
-                                Reporte Excel
-                                <i class="fas fa-file-excel"></i>
-                            </button>
+
                         </td>
 
                     </tr>

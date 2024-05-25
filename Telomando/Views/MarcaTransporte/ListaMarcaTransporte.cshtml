@@ -1,11 +1,11 @@
-﻿@model List<Telomando.Models.Tarifa>
+﻿@model List<Telomando.Models.MarcaTransporte>
 @{
-    ViewData["Title"] = "Tarifas";
+    ViewData["Title"] = "MarcaTransporte";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Tarifas</h1>
+    <h1 class="display-4">Marcas de transporte</h1>
 
 </div>
 
@@ -17,37 +17,31 @@
         </button>
     </div>
     <div class="card-body">
-        <a class="btn-success btn-sm" asp-action="Tarifas_Detalle" asp-controller="Tarifas" asp-route-idTarifa="0">Crear Nuevo</a>
+        <a class="btn-success btn-sm" asp-action="MarcaTransporte_Detalle" asp-controller="MarcaTransporte" asp-route-idMarcaTransporte="0">Crear Nuevo</a>
         <hr />
         <table class="table table-striped" id="reportTable">
             <thead>
                 <tr>
-                    <th>Moneda</th>
-                    <th>Valor</th>
-                    <th>Porcentaje extra</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
                     <th>Fecha Creacion</th>
                     <th>Activo</th>
                     <th>Eliminado</th>
-                   <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@item.oMomedas.Nombre</td>
-                        <td>@item.Valor</td>
-                        <td>@item.PorcentajeExtra</td>
-
+                        <td>@item.IdmodelotransporteNavigation.Nombre</td>
+                        <td>@item.Nombre</td>
                         <td>@item.FechaRegistro</td>
                         <td>@item.Activo</td>
                         <td>@item.Eliminado</td>
                         <td>
-                            <a class="btn btn-primary btn-sm" asp-action="Tarifas_Detalle" asp-controller="Tarifas" asp-route-idTarifa="@item.Idtarifa">Editar</a>
-
-                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Tarifas" asp-route-idTarifa="@item.Idtarifa">Eliminar</a>
-
-
+                            <a class="btn btn-primary btn-sm" asp-action="MarcaTransporte_Detalle" asp-controller="MarcaTransporte" asp-route-idMarcaTransporte="@item.Idmarcatransporte">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="MarcaTransporte" asp-route-idMarcaTransporte="@item.Idmarcatransporte">Eliminar</a>
 
                         </td>
 
@@ -59,7 +53,6 @@
     </div>
 
 </div>
-
 
 
 <script>
