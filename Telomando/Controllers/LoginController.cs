@@ -4,7 +4,6 @@ using System.Data.Entity;
 using System.Security.Cryptography;
 using System.Text;
 using Telomando.Models;
-using System.;
 
 namespace Telomando.Controllers
 {
@@ -37,10 +36,13 @@ namespace Telomando.Controllers
                     Usuario usuario = _DBContext.Usuarios.Find(email.Idusuario);
                     usuario.Logueado = "SI";
 
-                    Session["usuarioId"] = usuario.Idusuario;
-                    Session["correo"] = email.Email1;
-                    Session["nombreCompleto"] = usuario.Nombres+" "+usuario.Apellidos;
-                    Session["logueado"] = usuario.Logueado;
+                    /*
+                    HttpContext.Session.SetInt32("idusuario", email.Idusuario);
+                    HttpContext.Session.SetString("correo", email.Email1);
+                    HttpContext.Session.SetString("nombre", usuario.Nombres);
+                    HttpContext.Session.SetString("apellido", usuario.Apellidos);
+                    HttpContext.Session.SetString("logueado", usuario.Logueado);
+                    */
                     _DBContext.SaveChanges();
                     
                     return RedirectToAction("Index","Home");
@@ -134,11 +136,22 @@ namespace Telomando.Controllers
             _DBContext.Emails.Add(email);
             _DBContext.SaveChanges();
 
+            Cliente cliente = new Cliente();
+            cliente.Idusuario = usuario.Idusuario;
+            cliente.Idtipocliente = 1;
+            cliente.FechaRegistro = DateOnly.FromDateTime(DateTime.Now);
+            cliente.Activo = true;
+            cliente.Eliminado = false;
+            _DBContext.Clientes.Add(cliente);
+            _DBContext.SaveChanges();
+
+            /*
             HttpContext.Session.SetInt32("idusuario",usuario.Idusuario);
             HttpContext.Session.SetString("correo", email.Email1);
             HttpContext.Session.SetString("nombre", usuario.Nombres);
             HttpContext.Session.SetString("apellido", usuario.Apellidos);
             HttpContext.Session.SetString("logueado", usuario.Logueado);
+            */
 
             return RedirectToAction("Index", "Home");
         }
