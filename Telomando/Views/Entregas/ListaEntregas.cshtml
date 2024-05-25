@@ -1,0 +1,80 @@
+﻿@model List<Telomando.Models.Entrega>
+@{
+    ViewData["Title"] = "Entregas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Entregas</h1>
+
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <button onclick="generateExcel()" class="btn btn-success btn-sm">
+            Reporte Excel
+            <i class="fas fa-file-excel"></i>
+        </button>
+    </div>
+    <div class="card-body">
+        <a class="btn-success btn-sm" asp-action="Entrega_Detalle" asp-controller="Entregas" asp-route-identrega="0">Crear Nuevo</a>
+        <hr />
+
+        <table class="table table-striped" id="reportTable">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Cliente</th>
+                    <th>Direccion</th>
+                    <th>Informacion Adicional</th>
+                    <th>Tipo de Pago</th>
+                    <th>Transporte</th>
+                    <th>Tarifa</th>
+                    <th>Bodega</th>
+                    <th>Fecha de Creacion</th>
+                    <th>Activo</th>
+                    <th>Eliminado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Codigo</td>
+                        <td>@item.oCliente.Idcliente</td>
+                        <td>@item.oDireccion.Direccion1</td>
+                        <td>@item.InformacionAdicional</td>
+                        <td>@item.oTipoPago.Nombre</td>
+                        <td>@item.oTrasnporte.Placa</td>
+                        <td>@item.oTarifa.Valor</td>
+                        <td>@item.oBodega.Idbodega</td>
+                        <td>@item.FechaRegistro</td>
+                        <td>@item.Activo</td>
+                        <td>@item.Eliminado</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" asp-action="Entrega_Detalle" asp-controller="Entregas" asp-route-idEntrega="@item.Identrega">Editar</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Eliminar" asp-controller="Entregas" asp-route-idEntrega="@item.Identrega">Eliminar</a>
+
+                        </td>
+
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+    function generateExcel() {
+        var table = document.getElementById('reportTable');
+        var workbook = XLSX.utils.book_new();
+        var worksheet = XLSX.utils.table_to_sheet(table);
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Reporte");
+
+        XLSX.writeFile(workbook, 'Reporte.xlsx');
+    }
+</script>
+

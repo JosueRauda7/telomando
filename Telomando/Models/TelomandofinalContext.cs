@@ -342,32 +342,32 @@ public partial class TelomandofinalContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("informacion_adicional");
 
-            entity.HasOne(d => d.IdbodegaNavigation).WithMany(p => p.Entregas)
+            entity.HasOne(d => d.oBodega).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.Idbodega)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("entregas$entregas_ibfk_6");
 
-            entity.HasOne(d => d.IdclienteNavigation).WithMany(p => p.Entregas)
+            entity.HasOne(d => d.oCliente).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.Idcliente)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("entregas$entregas_ibfk_1");
 
-            entity.HasOne(d => d.IddireccionNavigation).WithMany(p => p.Entregas)
+            entity.HasOne(d => d.oDireccion).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.Iddireccion)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("entregas$entregas_ibfk_2");
 
-            entity.HasOne(d => d.IdtarifaNavigation).WithMany(p => p.Entregas)
+            entity.HasOne(d => d.oTarifa).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.Idtarifa)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("entregas$entregas_ibfk_5");
 
-            entity.HasOne(d => d.IdtipopagoNavigation).WithMany(p => p.Entregas)
+            entity.HasOne(d => d.oTipoPago).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.Idtipopago)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("entregas$entregas_ibfk_3");
 
-            entity.HasOne(d => d.IdtransporteNavigation).WithMany(p => p.Entregas)
+            entity.HasOne(d => d.oTrasnporte).WithMany(p => p.Entregas)
                 .HasForeignKey(d => d.Idtransporte)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("entregas$entregas_ibfk_4");
