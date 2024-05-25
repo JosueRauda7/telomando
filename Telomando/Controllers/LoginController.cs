@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 using System.Data.Entity;
+using System.Security.Cryptography;
 using System.Text;
 using Telomando.Models;
 
@@ -21,7 +23,22 @@ namespace Telomando.Controllers
         [HttpPost]
         public ActionResult Validate(string correo, string password)
         {
-            return RedirectToAction("Index","Home");
+            Email email = _DBContext.Emails.Include(email => email.Email1).Where(email => email.Email1 == correo).FirstOrDefault();
+            byte[] bytePassword = Encoding.UTF8.GetBytes(password);
+            SHA512 sha512 = SHA512.Create();
+            byte[] passwordToBytes = sha512.ComputeHash(bytePassword);
+
+            UsuarioPassword usuarioPassword = _DBContext.UsuarioPasswords.Include(password => password.Pwd).Where(password => password.Pwd.Equals(passwordToBytes)).FirstOrDefault();
+
+            if(email != null && usuarioPassword != null) {
+                if(email.Idusuario == usuarioPassword.Idusuario)
+                {
+                    return RedirectToAction("Index","Home");
+                }
+            }
+
+            ViewBag.error += "Credenciales incorrectas.";
+            return View("Index");
         }
 
         [HttpPost]
@@ -58,6 +75,55 @@ namespace Telomando.Controllers
                 ViewBag.error += "Correo secundario ya existe.";
                 return View("Index");
             }
+
+            Usuario usuario = new Usuario();
+            usuario.Nombres = usuarioRegistro.nombres;
+            usuario.Apellidos = usuarioRegistro.apellidos;
+            usuario.Idtipousuario = 2;
+            usuario.Logueado = "SI";
+            usuario.Bloqueado = "NO";
+            usuario.IntentosLogin = 0;
+            usuario.FechaRegistro = DateOnly.FromDateTime(DateTime.Now);
+            usuario.Activo = true;
+            usuario.Eliminado = false;
+
+            _DBContext.Usuarios.Add(usuario);
+            _DBContext.SaveChanges();
+
+            UsuarioPassword usuarioPassword = new UsuarioPassword();
+            usuarioPassword.Idusuario = usuario.Idusuario;
+            byte[] bytePassword = Encoding.UTF8.GetBytes(usuarioRegistro.password);
+            SHA512 sha512 = SHA512.Create();
+            byte[] passwordToBytes = sha512.ComputeHash(bytePassword);
+            usuarioPassword.Pwd = passwordToBytes;
+            usuarioPassword.FechaCreacion = DateOnly.FromDateTime(DateTime.Now);
+            usuarioPassword.FechaVencimiento = DateOnly.FromDateTime(DateTime.Now).AddMonths(3);
+            usuarioPassword.FechaRegistro = DateOnly.FromDateTime(DateTime.Now);
+            usuarioPassword.Activo = true;
+            usuarioPassword.Eliminado = false;
+            _DBContext.UsuarioPasswords.Add(usuarioPassword);
+            _DBContext.SaveChanges();
+
+            Contacto contacto = new Contacto();
+            contacto.Idusuario = usuario.Idusuario;
+            contacto.Contacto1 = usuarioRegistro.telefono1;
+            contacto.Contacto2 = usuarioRegistro.telefono2;
+            contacto.FechaRegistro = DateOnly.FromDateTime(DateTime.Now);
+            contacto.Activo = true;
+            contacto.Eliminado = false;
+            _DBContext.Contactos.Add(contacto);
+            _DBContext.SaveChanges();
+
+            Email email = new Email();
+            email.Idusuario = usuario.Idusuario;
+            email.Email1 = usuarioRegistro.emailPrincipal;
+            email.Email2 = usuarioRegistro.emailSecundario;
+            email.FechaRegistro = DateOnly.FromDateTime(DateTime.Now);
+            email.Activo = true;
+            email.Eliminado = false;
+            _DBContext.Emails.Add(email);
+            _DBContext.SaveChanges();
+
             return RedirectToAction("Index", "Home");
         }
     }
