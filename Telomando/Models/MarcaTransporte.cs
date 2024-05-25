@@ -23,5 +23,5 @@ public partial class MarcaTransporte
 
     public bool Eliminado { get; set; }
 
-    public virtual ModeloTransporte IdmodelotransporteNavigation { get; set; } = null!;
+    public virtual ModeloTransporte? IdmodelotransporteNavigation { get; set; } = null!;
 }
