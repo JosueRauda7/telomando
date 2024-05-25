@@ -15,7 +15,7 @@ public partial class Bodega
 
     [Required(ErrorMessage = "Campo obligatorio.")]
     public int Idtipobodega { get; set; }
-
+    [Required(ErrorMessage = "Campo obligatorio.")]
     public int Idsucursal { get; set; }
 
     public DateOnly FechaRegistro { get; set; }
